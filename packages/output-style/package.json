@@ -1,0 +1,35 @@
+{
+  "name": "pi-output-style",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Switchable Markdown output styles for Pi sessions",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "output-style"
+  ],
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./index.ts",
+  "scripts": {
+    "check": "tsc --noEmit --module nodenext --moduleResolution nodenext --target es2022 --skipLibCheck index.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.3",
+    "@earendil-works/pi-tui": "^0.84.3"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.84.3",
+    "@earendil-works/pi-tui": "0.84.3",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

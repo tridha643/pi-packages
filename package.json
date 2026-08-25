@@ -1,0 +1,31 @@
+{
+  "name": "pi-packages",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Pi extension packages",
+  "keywords": [
+    "pi-package"
+  ],
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "verify": "npm run lint && npm run check && npm test"
+  },
+  "pi": {
+    "extensions": [
+      "./packages/blue-gradient-editor/index.ts",
+      "./packages/cache-health/index.ts",
+      "./packages/context-dashboard/index.ts",
+      "./packages/output-style/index.ts",
+      "./packages/side-session/index.ts",
+      "./packages/tool-search/index.ts",
+      "./packages/pi-agent-delegation/index.ts",
+      "./packages/pi-composio-cli/index.ts"
+    ]
+  }
+}

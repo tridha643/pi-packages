@@ -1,0 +1,35 @@
+{
+  "name": "pi-cache-health",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Prompt-cache health footer and detailed cache guidance for Pi",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "cache"
+  ],
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./index.ts",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "tsx --test cache-health-metrics.test.ts",
+    "verify": "npm run check && npm test"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "0.84.3",
+    "@earendil-works/pi-coding-agent": "0.84.3"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "0.84.3",
+    "@earendil-works/pi-coding-agent": "0.84.3",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  }
+}

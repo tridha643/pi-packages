@@ -1,0 +1,36 @@
+{
+  "name": "pi-context-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pi header and context-window dashboard footer",
+  "keywords": [
+    "pi-package",
+    "pi",
+    "dashboard"
+  ],
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": "./index.ts",
+  "scripts": {
+    "check": "tsc --noEmit --allowImportingTsExtensions --module nodenext --moduleResolution nodenext --target es2022 --skipLibCheck index.ts dashboard-state.ts context-window-bar.ts context-window-bar.test.ts",
+    "test": "node --test --experimental-strip-types context-window-bar.test.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.3",
+    "@earendil-works/pi-tui": "^0.84.3"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "0.84.3",
+    "@earendil-works/pi-tui": "0.84.3",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
