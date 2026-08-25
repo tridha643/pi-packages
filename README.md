@@ -1,6 +1,6 @@
 # Pi packages
 
-Personal Pi extension packages kept together in one private repository. Each folder under `packages/` is a standalone Pi package. The root package loads all of them together.
+Pi extension packages kept together in one repository. Each folder under `packages/` is a standalone Pi package. The root package loads all of them together.
 
 ## Packages
 
@@ -16,7 +16,7 @@ Personal Pi extension packages kept together in one private repository. Each fol
 ## Install all packages
 
 ```bash
-pi install git:git@github.com:tridha643/pi-packages.git
+pi install git:github.com/tridha643/pi-packages
 ```
 
 ## Use one package from a local clone
