@@ -1,0 +1,17 @@
+{
+  "name": "pi-agent-delegation-e2e-fixture",
+  "private": true,
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./scripted-faux-provider.ts"
+    ]
+  }
+}

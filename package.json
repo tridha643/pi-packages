@@ -14,7 +14,8 @@
     "check": "npm run check --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "verify": "npm run lint && npm run check && npm test"
+    "test:e2e": "npm run test:e2e --workspaces --if-present",
+    "verify": "npm run lint && npm run check && npm test && npm run test:e2e"
   },
   "pi": {
     "extensions": [

@@ -11,20 +11,17 @@ import { BackendRegistry, type SubagentBackend } from "./backend.ts";
 import { claudeBackend } from "./backends/claude.ts";
 import { codexBackend } from "./backends/codex.ts";
 import { cursorBackend } from "./backends/cursor.ts";
+import { opencodeBackend } from "./backends/opencode.ts";
 import { piBackend } from "./backends/pi.ts";
 import type { BackendName } from "./domain.ts";
 
 const BackendRegistryLive = Layer.sync(BackendRegistry, () => {
-  // OpenCode is intentionally not registered. The backend and its tests are
-  // kept in `./backends/opencode.ts` so nothing has to be rewritten later, but
-  // the harness is not offered because we are not using it. To re-enable,
-  // import `opencodeBackend` and add it back to this list; it still needs
-  // `npm i -g opencode-ai` plus a provider credential to actually run.
   const backends: SubagentBackend[] = [
     piBackend,
     claudeBackend,
     codexBackend,
     cursorBackend,
+    opencodeBackend,
   ];
   return new Map<BackendName, SubagentBackend>(
     backends.map((backend) => [backend.name, backend]),

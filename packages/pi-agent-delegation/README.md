@@ -1,6 +1,6 @@
 # Pi Agent Delegation
 
-A private local Pi package for named, headless subagents across Pi, Claude Code, Codex, Cursor, and OpenCode.
+A public Git-only Pi package for named, headless subagents across Pi, Claude Code, Codex, Cursor, and OpenCode. It remains `private: true`, so npm will not publish it.
 
 ## Model
 
@@ -134,13 +134,18 @@ While work is running, a width-aware boxed `Subagents — N running` widget appe
 
 ```bash
 npm install
-npm run check
-npm test
-npm run test:live # optional Claude Code and Codex integration checks
+npm run verify
+npm run test:live # optional authenticated Claude Code and Codex checks
 ```
 
-The package is loaded from `./local-packages/pi-agent-delegation` relative to Pi's agent directory through `~/.pi/agent/settings.json`.
+Install the repository root to load this package with the other extensions:
+
+```bash
+pi install git:github.com/tridha643/pi-packages
+```
+
+To load only delegation, clone the repository and install `packages/pi-agent-delegation` as a local path.
 
 ## Upstream
 
-See [UPSTREAM.md](./UPSTREAM.md). This private package is marked `UNLICENSED` because its vendored source checkouts do not include license files.
+See [UPSTREAM.md](./UPSTREAM.md), [NOTICE.md](./NOTICE.md), and [SECURITY.md](./SECURITY.md). This public Git repository is `UNLICENSED`; no license is granted for this package or its copied and adapted upstream portions.

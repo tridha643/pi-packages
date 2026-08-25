@@ -380,7 +380,6 @@ const makePiSession = (
           sessionManager: SessionManager.create(task.cwd),
           settingsManager,
           resourceLoader: loader,
-          modelRegistry: registry,
           model,
           thinkingLevel,
           ...(task.allowedTools ? { tools: [...task.allowedTools] } : {}),

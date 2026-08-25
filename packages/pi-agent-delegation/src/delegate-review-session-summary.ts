@@ -32,7 +32,7 @@ export interface DelegateReviewSessionSummaryOptions {
   readonly sessionManager: ReviewContextSessionManager;
   /** Active Pi model, reused so review context does not silently change providers. */
   readonly model: Model<any>;
-  /** Active model registry, reused only for the selected model's authentication. */
+  /** Active model registry accepted from existing callers; Pi 0.84 creates the child runtime. */
   readonly modelRegistry: ModelRegistry;
   /** Working directory associated with the active Pi session. */
   readonly cwd: string;
@@ -78,7 +78,6 @@ export async function generateDelegateReviewSessionSummary(
     const { session } = await createAgentSession({
       cwd: options.cwd,
       model: options.model,
-      modelRegistry: options.modelRegistry,
       thinkingLevel: "low",
       noTools: "all",
       tools: [],
@@ -274,7 +273,9 @@ function createReviewSummaryResourceLoader(): ResourceLoader {
     getThemes: () => ({ themes: [], diagnostics: [] }),
     getAgentsFiles: () => ({ agentsFiles: [] }),
     getSystemPrompt: () => REVIEW_CONTEXT_SYSTEM_PROMPT,
+    getSystemPromptSource: () => undefined,
     getAppendSystemPrompt: () => [],
+    getAppendSystemPromptSources: () => [],
     extendResources: () => {},
     reload: async () => {},
   };
